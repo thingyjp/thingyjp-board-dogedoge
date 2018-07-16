@@ -1,0 +1,60 @@
+/dts-v1/;
+
+/ {
+	description = "dogedoge firmware";
+	#address-cells = <1>;
+
+	images {
+		kernel@1 {
+			data = /incbin/("../../images/zImage");
+			type = "kernel";
+			arch = "arm";
+			os = "linux";
+			compression = "none";
+			load = <0x41000000>;
+			entry = <0x41000000>;
+			hash@1 {
+				algo = "crc32";
+			};
+			hash@2 {
+				algo = "sha1";
+			};
+		};
+		fdt@1 {
+			data = /incbin/("../../images/sun8i-v3s-dogedoge.dtb");
+			type = "flat_dt";
+			arch = "arm";
+			load = <0x41800000>;
+			compression = "none";
+			hash@1 {
+				algo = "crc32";
+			};
+			hash@2 {
+				algo = "sha1";
+			};
+		};
+		ramdisk@1 {
+			data = /incbin/("../../images/rootfs.squashfs");
+			type = "ramdisk";
+			arch = "arm";
+			os = "linux";
+			#load = <0x41B00000>;
+			compression = "none";
+			hash@1 {
+				algo = "crc32";
+			};
+			hash@2 {
+				algo = "sha1";
+			};
+		};
+	};
+
+	configurations {
+		default = "conf@1";
+		conf@1 {
+			kernel = "kernel@1";
+			fdt = "fdt@1";
+			ramdisk = "ramdisk@1";
+		};
+	};
+};

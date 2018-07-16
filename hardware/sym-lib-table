@@ -1,0 +1,6 @@
+(sym_lib_table
+  (lib (name allwinner_v3s)(type Legacy)(uri ${KIPRJMOD}/symbols/allwinner_v3s.lib)(options "")(descr ""))
+  (lib (name rt8059gj5)(type Legacy)(uri ${KIPRJMOD}/symbols/rt8059gj5.lib)(options "")(descr ""))
+  (lib (name spinor)(type Legacy)(uri ${KIPRJMOD}/symbols/spinor.lib)(options "")(descr ""))
+  (lib (name ht42b534-1)(type Legacy)(uri ${KIPRJMOD}/symbols/ht42b534-1.lib)(options "")(descr ""))
+)

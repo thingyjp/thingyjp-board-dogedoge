@@ -1,0 +1,221 @@
+EESchema Schematic File Version 4
+LIBS:doge-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 5 5
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector:USB_B_Micro J3
+U 1 1 5B90B6B4
+P 4750 3250
+F 0 "J3" H 4805 3717 50  0000 C CNN
+F 1 "USB_B_Micro" H 4805 3626 50  0000 C CNN
+F 2 "Connector_USB:USB_Micro-B_Molex_47346-0001" H 4900 3200 50  0001 C CNN
+F 3 "~" H 4900 3200 50  0001 C CNN
+	1    4750 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0129
+U 1 1 5B90B6BB
+P 6900 3900
+F 0 "#PWR0129" H 6900 3650 50  0001 C CNN
+F 1 "GND" H 6905 3727 50  0000 C CNN
+F 2 "" H 6900 3900 50  0001 C CNN
+F 3 "" H 6900 3900 50  0001 C CNN
+	1    6900 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L ht42b534-1:ht42b534-1 U7
+U 1 1 5B90B6C1
+P 6900 3300
+F 0 "U7" H 6900 3350 60  0000 C CNN
+F 1 "ht42b534-1" H 6900 3250 60  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 6900 3300 60  0001 C CNN
+F 3 "" H 6900 3300 60  0001 C CNN
+	1    6900 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6900 3800 6900 3850
+Connection ~ 6900 3850
+Wire Wire Line
+	6900 3850 6900 3900
+$Comp
+L power:+5V #PWR0130
+U 1 1 5B90B6CB
+P 6300 2550
+F 0 "#PWR0130" H 6300 2400 50  0001 C CNN
+F 1 "+5V" H 6315 2723 50  0000 C CNN
+F 2 "" H 6300 2550 50  0001 C CNN
+F 3 "" H 6300 2550 50  0001 C CNN
+	1    6300 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6750 2750 6750 2650
+Wire Wire Line
+	6750 2650 6300 2650
+Wire Wire Line
+	6300 2650 6300 2550
+Wire Wire Line
+	6300 2650 6150 2650
+Connection ~ 6300 2650
+$Comp
+L Device:C C23
+U 1 1 5B90B6D6
+P 6900 2400
+F 0 "C23" H 7015 2446 50  0000 L CNN
+F 1 "C" H 7015 2355 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 6938 2250 50  0001 C CNN
+F 3 "~" H 6900 2400 50  0001 C CNN
+	1    6900 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6900 2550 6900 2650
+Wire Wire Line
+	6900 2650 7050 2650
+Connection ~ 6900 2650
+Wire Wire Line
+	6900 2650 6900 2750
+$Comp
+L power:GND #PWR0131
+U 1 1 5B90B6E2
+P 6700 2350
+F 0 "#PWR0131" H 6700 2100 50  0001 C CNN
+F 1 "GND" H 6705 2177 50  0000 C CNN
+F 2 "" H 6700 2350 50  0001 C CNN
+F 3 "" H 6700 2350 50  0001 C CNN
+	1    6700 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6900 2250 6900 2200
+Wire Wire Line
+	6900 2200 6700 2200
+Wire Wire Line
+	6700 2200 6700 2350
+$Comp
+L Device:C C22
+U 1 1 5B90B6EB
+P 6150 2950
+F 0 "C22" H 6265 2996 50  0000 L CNN
+F 1 "C" H 6265 2905 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 6188 2800 50  0001 C CNN
+F 3 "~" H 6150 2950 50  0001 C CNN
+	1    6150 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6150 3850 6900 3850
+Wire Wire Line
+	6150 2800 6150 2650
+Wire Wire Line
+	5450 2650 6150 2650
+Connection ~ 6150 2650
+Wire Wire Line
+	5450 2650 5450 3050
+Wire Wire Line
+	5450 3050 5050 3050
+Connection ~ 6150 3850
+$Comp
+L Device:R R11
+U 1 1 5B90B6FA
+P 5850 3250
+F 0 "R11" V 5643 3250 50  0000 C CNN
+F 1 "R" V 5734 3250 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5780 3250 50  0001 C CNN
+F 3 "~" H 5850 3250 50  0001 C CNN
+	1    5850 3250
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R12
+U 1 1 5B90B701
+P 5850 3350
+F 0 "R12" V 6050 3350 50  0000 C CNN
+F 1 "R" V 5950 3350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5780 3350 50  0001 C CNN
+F 3 "~" H 5850 3350 50  0001 C CNN
+	1    5850 3350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6000 3350 6200 3350
+Wire Wire Line
+	6000 3250 6200 3250
+Wire Wire Line
+	5700 3250 5550 3250
+Wire Wire Line
+	5700 3350 5250 3350
+Wire Wire Line
+	6150 3100 6150 3850
+$Comp
+L Device:C C21
+U 1 1 5B90B70D
+P 5550 3600
+F 0 "C21" H 5665 3646 50  0000 L CNN
+F 1 "C" H 5665 3555 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5588 3450 50  0001 C CNN
+F 3 "~" H 5550 3600 50  0001 C CNN
+	1    5550 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C20
+U 1 1 5B90B714
+P 5250 3600
+F 0 "C20" H 5365 3646 50  0000 L CNN
+F 1 "C" H 5365 3555 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5288 3450 50  0001 C CNN
+F 3 "~" H 5250 3600 50  0001 C CNN
+	1    5250 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5250 3450 5250 3350
+Connection ~ 5250 3350
+Wire Wire Line
+	5250 3350 5050 3350
+Wire Wire Line
+	5250 3750 5250 3850
+Connection ~ 5250 3850
+Wire Wire Line
+	5250 3850 5550 3850
+Wire Wire Line
+	5550 3750 5550 3850
+Connection ~ 5550 3850
+Wire Wire Line
+	5550 3850 6150 3850
+Wire Wire Line
+	5550 3450 5550 3250
+Connection ~ 5550 3250
+Wire Wire Line
+	5550 3250 5050 3250
+Wire Wire Line
+	4750 3650 4750 3850
+Wire Wire Line
+	7600 3250 7700 3250
+Wire Wire Line
+	7600 3350 7700 3350
+Text HLabel 7700 3250 2    50   Input ~ 0
+tx
+Text HLabel 7700 3350 2    50   Input ~ 0
+rx
+Wire Wire Line
+	7050 2650 7050 2750
+Wire Wire Line
+	4750 3850 5250 3850
+$EndSCHEMATC

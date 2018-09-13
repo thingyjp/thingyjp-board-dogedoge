@@ -1,9 +1,9 @@
 [submodule "buildroot"]
-	path = software/buildroot
+	path = software/buildroot-firmware
 	url = https://github.com/buildroot/buildroot.git
 [submodule "thingyjp-buildroot"]
 	path = software/thingyjp-buildroot
 	url = https://github.com/thingyjp/thingyjp-buildroot.git
 [submodule "flasher-buildroot"]
-	path = software/flasher-buildroot
+	path = software/buildroot-flasher
 	url = https://github.com/buildroot/buildroot.git

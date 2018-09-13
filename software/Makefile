@@ -11,12 +11,14 @@ output/fit.img: buildroot
 	cp buildroot/output/images/fit.img output/
 	cp buildroot/output/images/nor.img output/
 
-output/flasher.img: flasher_buildroot
+output/flasher.img: firmware flasher_buildroot
 	mkdir -p output
 	cp flasher-buildroot/output/images/flasher.img output/
 
-BUILDROOTARGS=BR2_DEFCONFIG=../buildroot.config BR2_EXTERNAL=../thingyjp-buildroot BR2_DL_DIR=../dl
-FLASHER_BUILDROOTARGS=BR2_DEFCONFIG=../flasher-buildroot.config BR2_DL_DIR=../dl
+BUILDROOTARGS=BR2_DEFCONFIG=../dogedoge-buildroot/configs/dogedoge_defconfig \
+	BR2_EXTERNAL="../dogedoge-buildroot ../thingyjp-buildroot" BR2_DL_DIR=../dl
+FLASHER_BUILDROOTARGS=BR2_DEFCONFIG=../dogedoge-buildroot/configs/dogedoge_flasher_defconfig \
+	BR2_EXTERNAL="../dogedoge-buildroot" BR2_DL_DIR=../dl
 
 dldir:
 	mkdir -p ./dl

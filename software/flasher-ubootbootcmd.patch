@@ -1,0 +1,35 @@
+From bc8b8433248404e6d7332946e257987160777f34 Mon Sep 17 00:00:00 2001
+From: Daniel Palmer <daniel@0x0f.com>
+Date: Wed, 12 Sep 2018 19:27:01 +0900
+Subject: [PATCH] Add bootcmd
+
+---
+ include/configs/sunxi-common.h | 8 ++------
+ 1 file changed, 2 insertions(+), 6 deletions(-)
+
+diff --git a/include/configs/sunxi-common.h b/include/configs/sunxi-common.h
+index 67490b7151..600053bd76 100644
+--- a/include/configs/sunxi-common.h
++++ b/include/configs/sunxi-common.h
+@@ -502,16 +502,12 @@ extern int soft_i2c_gpio_scl;
+ #define CONFIG_EXTRA_ENV_SETTINGS \
+ 	CONSOLE_ENV_SETTINGS \
+ 	MEM_LAYOUT_ENV_SETTINGS \
+-	DFU_ALT_INFO_RAM \
+ 	"fdtfile=" FDTFILE "\0" \
+ 	"console=ttyS0,115200\0" \
+ 	SUNXI_MTDIDS_DEFAULT \
+ 	SUNXI_MTDPARTS_DEFAULT \
+-	"uuid_gpt_esp=" UUID_GPT_ESP "\0" \
+-	"uuid_gpt_system=" UUID_GPT_SYSTEM "\0" \
+-	"partitions=" PARTS_DEFAULT "\0" \
+-	BOOTCMD_SUNXI_COMPAT
+-/*	BOOTENV*/
++	BOOTCMD_SUNXI_COMPAT \
++	"bootcmd=ext4load mmc 0 ${scriptaddr} /boot/boot.scr;source ${scriptaddr}\0"
+ 
+ #else /* ifndef CONFIG_SPL_BUILD */
+ #define CONFIG_EXTRA_ENV_SETTINGS
+-- 
+2.19.0
+

@@ -930,8 +930,6 @@ F0 "console" 50
 F1 "console.sch" 50
 F2 "tx" I R 4450 3800 50 
 F3 "rx" I R 4450 3700 50 
-F4 "vbus" I L 3900 3700 50 
-F5 "vio" I L 3900 3800 50 
 $EndSheet
 Wire Wire Line
 	4450 3700 4950 3700
@@ -2312,34 +2310,4 @@ Wire Wire Line
 Connection ~ 8050 4200
 Wire Wire Line
 	8050 4200 7850 4200
-Wire Wire Line
-	3900 3700 3750 3700
-Wire Wire Line
-	3750 3700 3750 3500
-$Comp
-L power:VCC #PWR?
-U 1 1 5BAC53AA
-P 3750 3500
-F 0 "#PWR?" H 3750 3350 50  0001 C CNN
-F 1 "VCC" H 3767 3673 50  0000 C CNN
-F 2 "" H 3750 3500 50  0001 C CNN
-F 3 "" H 3750 3500 50  0001 C CNN
-	1    3750 3500
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR?
-U 1 1 5BAC54A4
-P 3550 3500
-F 0 "#PWR?" H 3550 3350 50  0001 C CNN
-F 1 "+3V3" H 3565 3673 50  0000 C CNN
-F 2 "" H 3550 3500 50  0001 C CNN
-F 3 "" H 3550 3500 50  0001 C CNN
-	1    3550 3500
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3550 3500 3550 3800
-Wire Wire Line
-	3550 3800 3900 3800
 $EndSCHEMATC

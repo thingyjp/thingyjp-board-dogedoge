@@ -1,3 +1,5 @@
 (fp_lib_table
   (lib (name lqfpep)(type KiCad)(uri ${KIPRJMOD}/footprint/lqfpep.pretty)(options "")(descr ""))
+  (lib (name cd32)(type KiCad)(uri ${KIPRJMOD}/footprint/cd32.pretty)(options "")(descr ""))
+  (lib (name wson8-8x6mm)(type KiCad)(uri ${KIPRJMOD}/footprint/wson8-8x6mm.pretty)(options "")(descr ""))
 )

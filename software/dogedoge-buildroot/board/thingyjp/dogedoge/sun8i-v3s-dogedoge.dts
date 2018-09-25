@@ -32,10 +32,10 @@
 
 &spi0 {
 	status = "okay";
-	flash: w25q128@0 {
+	flash: w25q256@0 {
 		#address-cells = <1>;
 		#size-cells = <1>;
-		compatible = "spansion,w25q128", "jedec,spi-nor";
+		compatible = "spansion,w25q256", "jedec,spi-nor";
 		reg = <0>;
 		spi-max-frequency = <40000000>;
 		partitions {
@@ -44,27 +44,27 @@
 			#size-cells = <1>;
 			partition@0 {
 				label = "uboot";
-				reg = <0x0 0x40000>; // 256K
+				reg = <0x0 0x80000>; // 512K
 			};
 
 			partition@1 {
 				label = "env";
-				reg = <0x40000 0x8000>; //32K
+				reg = <0x80000 0x10000>; //64K
 			};
 
 			partition@2 {
 				label = "space";
-				reg = <0x48000 0x1b8000>; //1760K
+				reg = <0x90000 0x370000>; //3520K
 			};
 
 			partition@3 {
 				label = "fit1";
-				reg = <0x200000 0x700000>; //7MB
+				reg = <0x400000 0xE00000>; //14MB
 			};
 
 			partition@4 {
 				label = "fit2";
-				reg = <0x900000 0x700000>; //7MB
+				reg = <0x1200000 0xE00000>; //14MB
 			};
 		};
 	};

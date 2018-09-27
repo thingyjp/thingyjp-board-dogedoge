@@ -1,0 +1,82 @@
+#!/usr/bin/env python3
+
+import locale
+import time
+import subprocess
+import os
+import select
+import io
+import re
+from dialog import Dialog
+
+locale.setlocale(locale.LC_ALL, '')
+
+d = Dialog(dialog="dialog", autowidgetsize=True)
+
+d.setBackgroundTitle("Chum for DogeDoge")
+
+FLASHCP = "/usr/sbin/flashcp"
+NORIMG = "/flasher/nor.img"
+FITIMG = "/flasher/fit.img"
+WHOLEMTD = "/dev/mtd0"
+PRIMARYFW = "/dev/mtd4"
+
+
+def fakeprogress():
+    for i in range(10):
+        time.sleep(0.1)
+        d.gauge_update(i * 10)
+
+
+def writeflash(image, part):
+    process = subprocess.Popen([FLASHCP, '-v', image, part], stdout=subprocess.PIPE)
+    reader = io.TextIOWrapper(process.stdout, newline='\r')
+    stage = ""
+    while process.poll() is None:
+        progressline = reader.readline()
+        matches = re.search("(Erasing|Writing|Verifying).*\(([0-9]{1,3})%\)", progressline)
+        if matches is not None:
+            if matches.group(1) != stage:
+                stage = matches.group(1)
+                d.gauge_start(stage, percent=0)
+            d.gauge_update(int(matches.group(2)))
+
+
+def test():
+    d.infobox("Preparing self test...")
+
+
+def init():
+    d.infobox("Starting board initialisation...")
+    writeflash(NORIMG, WHOLEMTD)
+    d.gauge_stop()
+    d.msgbox("All done!")
+
+
+def update():
+    d.infobox("Starting firmware update...")
+    writeflash(FITIMG, PRIMARYFW)
+    d.gauge_stop()
+    d.msgbox("All done!")
+
+
+def badoption():
+    d.msgbox("Something terrible has happened")
+
+
+mainmenu = [("test", "Run board self-test"),
+            ("init", "Erase flash and install bootloader, firmware etc"),
+            ("update", "Update the firmware")]
+
+menudict = {"test": test, "init": init, "update": update}
+
+while True:
+    try:
+        choice = d.menu(text="Pick your poison", choices=mainmenu)
+        if choice[0] == Dialog.OK:
+            menudict.get(choice[1], badoption)()
+        else:
+            break
+    except Exception as e:
+        d.msgbox("Exception thrown: " + str(e))
+        break

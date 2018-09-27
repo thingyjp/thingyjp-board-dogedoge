@@ -1,0 +1,1 @@
+source "$BR2_EXTERNAL_DOGEDOGE_PATH/package/chum/Config.in"

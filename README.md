@@ -6,8 +6,9 @@ DogeDoge is a *complete* Linux system on a module. Complete meaning it can boot 
 
 This repo contains (maybe not right now):
 
-- Kicad files for the board.
+- Kicad files for the core board.
 - Kicad files for a test/programming jig.
+- Kicad files for one or more wifi modules that work with the thingy.jp middleware. 
 - Makefiles, configs etc to create buildroot based firmware images with the thingy.jp middleware for wifi configuration, OTA updates etc.
 - Makefiles, configs etc to create a buildroot based sd-card image for automated testing and writing the initial firmware in a jig.
 

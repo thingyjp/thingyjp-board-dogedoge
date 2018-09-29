@@ -1,0 +1,16 @@
+baudrate=115200
+bootcmd=ext4load mmc 0 ${scriptaddr} /boot/boot.scr;source ${scriptaddr}
+bootdelay=2
+bootm_size=0x2e00000
+console=ttyS0,115200
+fdt_addr_r=0x41800000
+fdtcontroladdr=43dab3a8
+fdtfile=sun8i-v3s-dogedoge.dtb
+kernel_addr_r=0x41000000
+pxefile_addr_r=0x41A00000
+ramdisk_addr_r=0x41B00000
+scriptaddr=0x41900000
+serial#=12c00002906dc0d3
+stderr=serial@01c28000
+stdin=serial@01c28000
+stdout=serial@01c28000

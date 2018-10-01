@@ -15,4 +15,4 @@ getfitts=if fdt addr ${fitaddr}; then fdt get value ${tsvar} / timestamp; else s
 loadfit1=setenv fitaddr ${loadaddr1}; setenv fitoff ${fit1off}; setenv tsvar fit1ts; run loadfit; run getfitts
 loadfit2=setenv fitaddr ${loadaddr2}; setenv fitoff ${fit2off}; setenv tsvar fit2ts; run loadfit; run getfitts
 chooseimage=if itest $fit2ts -gt $fit1ts; then setenv loadaddr ${loadaddr2}; setenv activepart ${fit2off}; else setenv loadaddr ${loadaddr1}; setenv activepart ${fit1off}; fi
-bootcmd=sf probe;run loadfit1; run loadfit2; run chooseimage; setenv bootargs ota.part=$activepart; bootm ${loadaddr}'
+bootcmd=sf probe;run loadfit1; run loadfit2; run chooseimage; setenv bootargs ota.part=$activepart; bootm ${loadaddr}

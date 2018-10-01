@@ -5,7 +5,7 @@ FIRMWARE_BUILDROOTARGS=BR2_DEFCONFIG=../dogedoge-buildroot/configs/dogedoge_defc
 FLASHER_BUILDROOTARGS=BR2_DEFCONFIG=../dogedoge-buildroot/configs/dogedoge_flasher_defconfig \
 	BR2_EXTERNAL="../dogedoge-buildroot" BR2_DL_DIR=../dl
 
-.PHONY: all firmware flasher dldir buildroot flasher_buildroot clean
+.PHONY: all firmware flasher dldir firmware_buildroot flasher_buildroot flasher_buildroot_clean clean
 
 all: firmware flasher
 
@@ -43,7 +43,9 @@ flasher_buildroot_config:
 	$(MAKE) -C $(FLASHER_BUILDROOT) $(FLASHER_BUILDROOTARGS) menuconfig
 	$(MAKE) -C $(FLASHER_BUILDROOT) $(FLASHER_BUILDROOTARGS) savedefconfig
 
-clean:
-	$(MAKE) -C $(FIRMWARE_BUILDROOT) $(BUILDROOTARGS) clean
+flasher_buildroot_clean:
 	$(MAKE) -C $(FLASHER_BUILDROOT) $(FLASHER_BUILDROOTARGS) clean
+
+clean: flasher_buildroot_clean
+	$(MAKE) -C $(FIRMWARE_BUILDROOT) $(BUILDROOTARGS) clean
 	rm -rf output

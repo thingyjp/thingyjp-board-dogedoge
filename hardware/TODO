@@ -1,0 +1,9 @@
+Rev 0 validation:
+
+- Ethernet
+- CSI
+
+
+Rev 1 enchancements:
+
+- Add STM32 slave

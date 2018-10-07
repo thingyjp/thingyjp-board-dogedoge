@@ -7,6 +7,7 @@ fdt_addr_r=0x41800000
 fdtcontroladdr=43dab3a8
 fdtfile=sun8i-v3s-dogedoge.dtb
 kernel_addr_r=0x41000000
+mmc_bootdev=0
 pxefile_addr_r=0x41A00000
 ramdisk_addr_r=0x41B00000
 scriptaddr=0x41900000

@@ -1,5 +1,5 @@
 baudrate=115200
-bootdelay=2
+bootdelay=-2
 console=ttyS0,115200
 serial#=12c00002906dc0d3
 stderr=serial@01c28000

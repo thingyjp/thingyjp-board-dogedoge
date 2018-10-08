@@ -620,16 +620,16 @@ Wire Wire Line
 $Comp
 L power:+3V3 #PWR0122
 U 1 1 5B93E4A1
-P 1700 3850
-F 0 "#PWR0122" H 1700 3700 50  0001 C CNN
-F 1 "+3V3" H 1715 4023 50  0000 C CNN
-F 2 "" H 1700 3850 50  0001 C CNN
-F 3 "" H 1700 3850 50  0001 C CNN
-	1    1700 3850
+P 1700 3800
+F 0 "#PWR0122" H 1700 3650 50  0001 C CNN
+F 1 "+3V3" H 1715 3973 50  0000 C CNN
+F 2 "" H 1700 3800 50  0001 C CNN
+F 3 "" H 1700 3800 50  0001 C CNN
+	1    1700 3800
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1700 3850 1700 3900
+	1700 3800 1700 3850
 Wire Wire Line
 	2300 4300 2700 4300
 Text Label 2700 4300 2    50   ~ 0
@@ -2126,11 +2126,6 @@ Wire Wire Line
 Connection ~ 10150 11750
 Wire Wire Line
 	2300 4400 2350 4400
-Wire Wire Line
-	2350 4400 2350 3900
-Wire Wire Line
-	2350 3900 1700 3900
-Connection ~ 1700 3900
 $Comp
 L spinor:spinor U6
 U 1 1 5B92C933
@@ -2142,11 +2137,6 @@ F 3 "" H 1700 4400 50  0001 C CNN
 	1    1700 4400
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2300 4500 2350 4500
-Wire Wire Line
-	2350 4500 2350 4400
-Connection ~ 2350 4400
 Text Notes 1850 3150 0    50   ~ 0
 100K 100K
 Text Notes 1800 2650 0    50   ~ 0
@@ -2370,4 +2360,15 @@ Wire Wire Line
 	1000 900  1000 1100
 Wire Wire Line
 	1000 1400 1000 1500
+Wire Wire Line
+	1700 3850 2350 3850
+Wire Wire Line
+	2350 3850 2350 4400
+Connection ~ 1700 3850
+Wire Wire Line
+	1700 3850 1700 3900
+Wire Wire Line
+	2300 4500 2700 4500
+Text Label 2700 4500 2    50   ~ 0
+~reset
 $EndSCHEMATC

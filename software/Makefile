@@ -3,7 +3,7 @@ FLASHER_BUILDROOT=buildroot-flasher
 FIRMWARE_BUILDROOTARGS=BR2_DEFCONFIG=../dogedoge-buildroot/configs/dogedoge_defconfig \
 	BR2_EXTERNAL="../dogedoge-buildroot ../thingyjp-buildroot" BR2_DL_DIR=../dl
 FLASHER_BUILDROOTARGS=BR2_DEFCONFIG=../dogedoge-buildroot/configs/dogedoge_flasher_defconfig \
-	BR2_EXTERNAL="../dogedoge-buildroot" BR2_DL_DIR=../dl
+	BR2_EXTERNAL="../dogedoge-buildroot ../thingyjp-buildroot" BR2_DL_DIR=../dl
 
 .PHONY: all firmware flasher dldir firmware_buildroot flasher_buildroot flasher_buildroot_clean clean
 

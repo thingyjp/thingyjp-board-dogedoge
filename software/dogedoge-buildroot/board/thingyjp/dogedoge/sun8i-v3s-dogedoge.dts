@@ -24,6 +24,13 @@
 	status = "okay";
 };
 
+&mmc1 {
+        broken-cd;
+        bus-width = <4>;
+        vmmc-supply = <&reg_vcc3v3>;
+        status = "okay";
+};
+
 &uart0 {
 	pinctrl-0 = <&uart0_pins_a>;
 	pinctrl-names = "default";

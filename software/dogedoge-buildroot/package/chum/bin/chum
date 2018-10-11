@@ -60,15 +60,20 @@ def update():
     d.msgbox("All done!")
 
 
+def commission():
+    d.infobox("Starting commissioning process...")
+
+
 def badoption():
     d.msgbox("Something terrible has happened")
 
 
 mainmenu = [("test", "Run board self-test"),
             ("init", "Erase flash and install bootloader, firmware etc"),
-            ("update", "Update the firmware")]
+            ("update", "Update the firmware"),
+            ("commission", "Request and install device certificates")]
 
-menudict = {"test": test, "init": init, "update": update}
+menudict = {"test": test, "init": init, "update": update, "commission": commission}
 
 while True:
     try:

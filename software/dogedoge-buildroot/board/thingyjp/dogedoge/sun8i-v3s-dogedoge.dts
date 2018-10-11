@@ -13,6 +13,12 @@
 	chosen {
 		stdout-path = "serial0:115200n8";
 	};
+
+	pwrseq_wifi: pwrseq_wifi@0 {
+		compatible = "mmc-pwrseq-simple";
+		reset-gpios = <&pio 4 24 GPIO_ACTIVE_LOW>;
+		post-power-on-delay-ms = <500>;
+	};
 };
 
 &mmc0 {
@@ -25,10 +31,11 @@
 };
 
 &mmc1 {
-        broken-cd;
-        bus-width = <4>;
-        vmmc-supply = <&reg_vcc3v3>;
-        status = "okay";
+	non-removable;
+	bus-width = <4>;
+	vmmc-supply = <&reg_vcc3v3>;
+	mmc-pwrseq = <&pwrseq_wifi>;
+	status = "okay";
 };
 
 &uart0 {

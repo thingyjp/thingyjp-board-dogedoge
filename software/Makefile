@@ -34,6 +34,9 @@ firmware_buildroot_config:
 	$(MAKE) -C $(FIRMWARE_BUILDROOT) $(FIRMWARE_BUILDROOTARGS) menuconfig
 	$(MAKE) -C $(FIRMWARE_BUILDROOT) $(FIRMWARE_BUILDROOTARGS) savedefconfig
 
+firmware_buildroot_clean:
+	$(MAKE) -C $(FIRMWARE_BUILDROOT) $(FIRMWARE_BUILDROOTARGS) clean
+
 flasher_buildroot: dldir
 	$(MAKE) -C $(FLASHER_BUILDROOT) $(FLASHER_BUILDROOTARGS) defconfig
 	$(MAKE) -C $(FLASHER_BUILDROOT) $(FLASHER_BUILDROOTARGS)
@@ -46,6 +49,6 @@ flasher_buildroot_config:
 flasher_buildroot_clean:
 	$(MAKE) -C $(FLASHER_BUILDROOT) $(FLASHER_BUILDROOTARGS) clean
 
-clean: flasher_buildroot_clean
+clean: firmware_buildroot_clean flasher_buildroot_clean
 	$(MAKE) -C $(FIRMWARE_BUILDROOT) $(BUILDROOTARGS) clean
 	rm -rf output

@@ -1,0 +1,21 @@
+sudo: false
+
+os:
+  - linux
+
+language:
+  - c
+
+services:
+  - docker
+
+before_install:
+  - docker pull debian:testing
+
+script:
+  - echo FROM debian:testing > Dockerfile
+  - echo RUN apt-get update >> Dockerfile
+  - echo RUN apt-get install -y build-essential >> Dockerfile   
+  - echo ADD . /root >> Dockerfile
+  - docker build -t withgit .
+  - docker run withgit /bin/sh -c "cd /root && make -C software/"

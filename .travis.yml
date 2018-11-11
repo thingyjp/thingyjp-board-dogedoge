@@ -14,4 +14,4 @@ before_install:
 
 script:
   - docker build -t withgit .
-  - docker run --user="buildroot" withgit /bin/sh -c "cd /home/buildroot && make -C software/"
+  - docker run --user="buildroot" withgit /bin/sh -c "cd /home/buildroot && make -s -C software/"

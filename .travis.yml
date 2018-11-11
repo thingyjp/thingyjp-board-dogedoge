@@ -14,4 +14,4 @@ before_install:
 
 script:
   - docker build -t withgit .
-  - docker run withgit /bin/sh -c "cd /root && make -C software/"
+  - docker run withgit /bin/sh -c "FORCE_UNSAFE_CONFIGURE=1 cd /root && make -C software/"
